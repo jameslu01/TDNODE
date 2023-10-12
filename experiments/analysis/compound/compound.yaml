@@ -1,0 +1,92 @@
+NAME: TDNODE
+DATA:
+  ROOT_DIR: assets/data
+  TGI_DATA: assets/data/tgi.csv
+  OUTPUT_DIR: experiments/SLD/results
+  TGIOS_DATA: TGIOS_data.csv
+  PTNM_DATA: PTNM_data.csv
+  SPLIT: 0.8
+  SEED: 1000
+  AUGMENTATION: false
+  CUTOFF: 1000
+  COHORT: train
+  ARM: None
+  NORM_METHOD: patient
+TEST: 
+  RUN_ID: 2023-08-04 20:27:21_TDNODE_final_test_cutoff-32
+  EPOCH_TO_TEST: 0
+  EVAL_ALL: True
+  CUMULATIVE:
+    PLOT_TITLE: "Set"
+  BOOTSTRAP:
+    NUM_SAMPLE: 1000
+  ARM:
+    PTID_PATH: assets/data/ptids.json
+  INDIVIDUAL:
+    NUM_PRED_POINTS: 250
+    PATIENT_IDS: 
+      - 647
+    PATIENT_COLORS:
+      - b
+      - r
+      - g
+    GET_ALL_PTS: false
+    PLOT_PRED: true
+  ENCODINGS:
+    CUTOFF_TO_SET: 1000
+  OS:
+    CUTOFF_TO_USE: 1000
+    LATENT_DIM: 4
+    DROP_VARS: 
+      - IC-1
+      - IC-2
+      - IC-3
+      - IC-4
+    USE_COVARS: False
+    VISUAL: False
+  FEATURE_DEPENDENCE:
+    VARIABLE_IDX: 0
+    NUMBER_PERTURBED: 501
+    GROUPED: false
+    RANGE: 
+      - -2.0
+      - 2.0
+    MULTIVAR: true
+    MULTIVAR_IDX:
+      - 1
+      - 2
+    MULTIVAR_DIRECTION:
+      - up
+      - up 
+    MULTIVAR_MAGNITUDE:
+      - 0.701
+      - -0.701
+    PATIENT_IDS:
+      - 126
+      - 481
+      - 608
+      - 812
+      - 18
+      - 207
+    GET_ALL_PTS: False
+    VISUALIZE: False
+  LOG_RESIDUAL:
+    COLOR: b
+    CONFIDENCE_INTERVAL: 0.95
+  SURVIVAL_CURVE:
+    GT: assets/data/test_survival
+    N_BS: 50
+    PATIENT_IDS:
+      - 647
+    PREDICTION_PATH: OS_covars-False_cutoff-1000_varsdropeed_['IC-1', 'IC-2', 'IC-3', 'IC-4', 'parameter-1', 'parameter-2', 'pca-2']/overall_results-test.csv
+MODEL:
+  NAME: TDNODE
+  TOL: 1.0e-4
+  PARAMETERS:
+    PARAMETER_PATH: model_config.json
+ANALYSIS:
+  WINDOWS:
+    - 32
+  FUNCTIONS:
+   - cumulative 
+   - bootstrap

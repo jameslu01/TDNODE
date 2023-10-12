@@ -1,0 +1,55 @@
+NAME: TDNODE_final_test
+NOTE: "Publication Test"
+DATA:
+  ROOT_DIR: assets/data
+  TGI_DATA: assets/data/tgi.csv
+  OUTPUT_DIR: experiments/SLD/results
+  SPLIT: 0.8
+  SEED: 1000
+  AUGMENTATION: true
+  CUTOFF: 32
+  TRAIN_ALL: false
+  NORM_METHOD: patient
+TRAIN:
+  LR: 5.0e-5
+  L2: 1.0e-3
+  NUM_EPOCH: 1000
+  BATCH_SIZE: 8
+  PAD_VALUE: 0
+  USE_COLLATE_FN: true
+  USE_PRETRAIN: false
+TEST: 
+  EVAL_ALL: false
+MODEL:
+  NAME: TDNODE
+  TOL: 1.0e-4
+  FROM_PRETRAINED_ID: publication
+  FROM_PRETRAINED_EPOCH_START: 999
+  PARAMETERS:
+    INITIAL_CONDITION_ENCODER:
+      INPUT_DIM: 2
+      HIDDEN_DIM: 10
+      OUTPUT_DIM: 4
+    LATENT_ENCODER:
+      INPUT_DIM: 4
+      LSTM_OUTPUT_DIM: 100
+      ENCODER_PREPROCESSOR:
+        INPUT_DIM: 4
+        HIDDEN_DIM: 4
+        OUTPUT_DIM: 4
+      ENCODER_POSTPROCESSOR:
+        INPUT_DIM: 200
+        HIDDEN_DIM: 4
+        OUTPUT_DIM: 4
+    ODE_SOLVER:
+      INPUT_DIM: 8
+      HIDDEN_DIM: 21
+      OUTPUT_DIM: 4
+      LATENT_DIM: 4
+    REDUCER:
+      INPUT_DIM: 4
+      OUTPUT_DIM: 1
+      
+
+  
+    
