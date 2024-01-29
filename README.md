@@ -283,6 +283,7 @@ If automated analysis is desired, simply adjust the following parameter:
 ## Reference
 Refer to the following for the paper that this code supports: 
 
+```
 @article{laurie2023explainable,
   title={Explainable deep learning for tumor dynamic modeling and overall survival prediction using Neural-ODE},
   author={Laurie, Mark and Lu, James},
@@ -293,6 +294,7 @@ Refer to the following for the paper that this code supports:
   year={2023},
   publisher={Nature Publishing Group UK London}
 }
+```
 
 ## Contact
 Any questions or issues with the code can be referred to either James Lu (lu.james@gene.com) or Mark Laurie (markl21@stanford.edu). 
