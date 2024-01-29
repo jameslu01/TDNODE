@@ -1,4 +1,4 @@
-# Explainable deep learning for tumor dynamic modeling and overall survival prediction using neural ODE
+# Explainable deep learning for tumor dynamic modeling and overall survival prediction using Neural-ODE
 
 This repository provides an implementation of Tumor Dynamic Neural-ODE (TDNODE), a pharmacology-informed neural network that enables model discovery from longitudinal tumor size data. This implementation of TDNODE provides a standardized workflow for the following:
 
