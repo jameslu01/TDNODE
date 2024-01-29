@@ -14,9 +14,7 @@ This repository provides an implementation of Tumor Dynamic Neural-ODE (TDNODE),
     g) Visualization of the effect of composite kinetic rate parameter changes on tumor dynamic predictions for individual patients. 
 4) Synthetic data containing de-identified clinical trial data for user experimentation.
 
-This codebase is implemented in Pytorch and contains supporting GPU functionality. See the below illustration for a representation of TDNODE's model workflow and reference [1] for the corresponding TDNODE paper.
-
-![Alt text](assets/TDNODE_summary_figure.png)
+This codebase is implemented in Pytorch and contains supporting GPU functionality. 
 
 
 ## Installation
